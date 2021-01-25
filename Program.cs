@@ -10,13 +10,13 @@ namespace BuilderPattern
     {
         static void Main(string[] args)
         {
-            //CarSearchCriteria criteria = new CarSearchCriteria(BodyStyle.Hatchback, FuelType.Diesel, null, null, null, 2014, 2019, null, null, null, null);
+            //var criteria = new CarSearchCriteria(BodyStyle.Hatchback, FuelType.Diesel, null, null, null, 2014, 2019, null, null, null, null);
 
-            CarSearchCriteria criteria = new CarSearchCriteriaBuilder().HavingBodyStyle(BodyStyle.Hatchback)
-                                                                       .HavingFuelType(FuelType.Diesel)
-                                                                       .ProducedInOrAfterYear(2014)
-                                                                       .ProducedInOrBeforeYear(2019)
-                                                                       .Build();
+            var criteria = new CarSearchCriteriaBuilder().HavingBodyStyle(BodyStyle.Hatchback)
+                                                         .HavingFuelType(FuelType.Diesel)
+                                                         .ProducedInOrAfterYear(2014)
+                                                         .ProducedInOrBeforeYear(2019)
+                                                         .Build();
 
             List<Car> results = CarSearcher.Search(criteria);
 
